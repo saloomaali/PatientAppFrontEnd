@@ -25,6 +25,18 @@ constructor(private api:ApiService){}
       (response:any)=>{
 
         console.log(response)
+
+        if(response.status == "success"){
+
+          alert("Course added successfully")
+          this.ptn_Id = ""
+          this.name = ""
+          this.age = ""
+          this.mobNo = ""
+        }
+        else{
+          alert("Something went wrong")
+        }
       }
 
     )
