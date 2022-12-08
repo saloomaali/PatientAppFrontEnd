@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class SearchComponent {
 
   ptn_Id = ""
+  
 
   constructor(private api:ApiService){}
 
@@ -27,7 +28,7 @@ searchData:any = []
         if (response.length == 0) {
 
           alert("No such patiend found")
-          
+
           
         } else {
 
@@ -36,6 +37,27 @@ searchData:any = []
 
       }
     )
+  }
+  deleteBtn=(id:any)=>{
+
+    let data:any = {"id":id}
+
+    this.api.deletetPatient(data).subscribe(
+      (response:any)=>{
+
+        console.log(response)
+
+        if (response.status == "success") {
+
+          alert("Patient deleted successfully")
+          this.searchData = []
+          
+        }
+
+
+      }
+    )
+
   }
 
 }
