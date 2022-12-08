@@ -8,7 +8,8 @@ import { ViewPatientComponent } from './view-patient/view-patient.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component'
 
 const myRouter:Routes = [
   {
@@ -18,6 +19,10 @@ const myRouter:Routes = [
   {
     path : "view",
     component : ViewPatientComponent
+  },
+  {
+    path:"search",
+    component : SearchComponent
   }
 ]
 
@@ -26,7 +31,8 @@ const myRouter:Routes = [
     AppComponent,
     AddPatientComponent,
     ViewPatientComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
